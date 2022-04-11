@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/userprofile/{id}', [\App\Http\Controlle
 Route::put('/userprofile/{id}',[UserController::class,'update'])->name('user.update');
 
 
-Route::middleware(['auth:sanctum', 'cors'])->group(function() {
+Route::middleware('auth:sanctum')->group(function() {
 
     Route::apiResource('treatments', TreatmentController::class);
 
